@@ -11,5 +11,6 @@ namespace Subra.SSL_SMS.Framework
         void EditContact(Contact contact);
         Contact GetContact(int id);
         Contact DeleteContact(int id);
+        IList<Group> GetGroups();
     }
 }

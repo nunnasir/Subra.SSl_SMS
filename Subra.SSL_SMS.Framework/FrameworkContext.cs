@@ -29,11 +29,16 @@ namespace Subra.SSL_SMS.Framework
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            
+            // Relation Between Group and Contact
+            builder.Entity<Group>()
+                .HasMany(g => g.Contacts)
+                .WithOne(c => c.Group);
+
             base.OnModelCreating(builder);
         }
 
         public DbSet<Group> Groups { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
     }
 }

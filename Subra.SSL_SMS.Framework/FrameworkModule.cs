@@ -29,7 +29,13 @@ namespace Subra.SSL_SMS.Framework
             builder.RegisterType<GroupRepository>().As<IGroupRepository>()
                 .InstancePerLifetimeScope();
 
+            builder.RegisterType<ContactRepository>().As<IContactRepository>()
+                .InstancePerLifetimeScope();
+
             builder.RegisterType<GroupService>().As<IGroupService>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<ContactService>().As<ContactService>()
                 .InstancePerLifetimeScope();
 
             base.Load(builder);

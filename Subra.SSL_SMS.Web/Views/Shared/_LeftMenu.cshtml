@@ -1,0 +1,26 @@
+﻿@model MenuModel
+
+<div class="menu_section">
+    <ul class="nav side-menu">
+        <li>
+            <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="index2.html">Dashboard2</a></li>
+                <li><a href="index3.html">Dashboard3</a></li>
+            </ul>
+        </li>
+        @foreach (var item in Model.MenuItems)
+        {
+            <li>
+                <a><i class="fa @item.Icon"></i> @item.Title <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    @foreach (var subItem in item.Childs)
+                    {
+                        <li><a href="@subItem.Url">@subItem.Title</a></li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+</div>

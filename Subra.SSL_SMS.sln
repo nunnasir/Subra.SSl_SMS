@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Subra.SSL_SMS.Web", "Subra.SSL_SMS.Web\Subra.SSL_SMS.Web.csproj", "{849CF732-E216-4CC3-88EF-968B3280660E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Subra.SSL_SMS.Data", "Subra.SSL_SMS.Data\Subra.SSL_SMS.Data.csproj", "{3675EFFF-A1BC-4812-A835-C63C041A7B2D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Subra.SSL_SMS.Framework", "Subra.SSL_SMS.Framework\Subra.SSL_SMS.Framework.csproj", "{72D22225-819A-431C-B8E1-DCA2B6CC97BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{849CF732-E216-4CC3-88EF-968B3280660E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{849CF732-E216-4CC3-88EF-968B3280660E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{849CF732-E216-4CC3-88EF-968B3280660E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{849CF732-E216-4CC3-88EF-968B3280660E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3675EFFF-A1BC-4812-A835-C63C041A7B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3675EFFF-A1BC-4812-A835-C63C041A7B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3675EFFF-A1BC-4812-A835-C63C041A7B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3675EFFF-A1BC-4812-A835-C63C041A7B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D22225-819A-431C-B8E1-DCA2B6CC97BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D22225-819A-431C-B8E1-DCA2B6CC97BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D22225-819A-431C-B8E1-DCA2B6CC97BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D22225-819A-431C-B8E1-DCA2B6CC97BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88AAD0F0-D0D9-49E3-B95D-44D6C49AC8AC}
+	EndGlobalSection
+EndGlobal

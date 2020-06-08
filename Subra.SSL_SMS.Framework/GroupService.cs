@@ -7,7 +7,6 @@ namespace Subra.SSL_SMS.Framework
     public class GroupService : IGroupService
     {
         private ISmsUnitOfWork _smsUnitOfWork;
-
         public GroupService(ISmsUnitOfWork smsUnitOfWork)
         {
             _smsUnitOfWork = smsUnitOfWork;

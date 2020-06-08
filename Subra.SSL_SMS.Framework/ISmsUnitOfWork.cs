@@ -8,5 +8,6 @@ namespace Subra.SSL_SMS.Framework
     public interface ISmsUnitOfWork : IUnitOfWork
     {
         IGroupRepository GroupRepository { get; set; }
+        IContactRepository ContactRepository { get; set; }
     }
 }

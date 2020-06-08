@@ -8,11 +8,14 @@ namespace Subra.SSL_SMS.Framework
     public class SmsUnitOfWork : UnitOfWork, ISmsUnitOfWork
     {
         public IGroupRepository GroupRepository { get; set; }
+        public IContactRepository ContactRepository { get; set; }
         public SmsUnitOfWork(FrameworkContext dbContext,
-            IGroupRepository groupRepository)
+            IGroupRepository groupRepository,
+            IContactRepository contactRepository)
             : base(dbContext)
         {
             GroupRepository = groupRepository;
+            ContactRepository = contactRepository;
         }
     }
 }

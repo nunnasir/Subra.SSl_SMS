@@ -32,7 +32,7 @@ namespace Subra.SSL_SMS.Web.Models
             _contactService.EditContact(contact);
         }
 
-        public void LoadGroup(int id)
+        public void LoadContact(int id)
         {
             var contact = _contactService.GetContact(id);
             if (contact != null)

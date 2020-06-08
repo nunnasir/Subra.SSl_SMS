@@ -21,6 +21,7 @@ namespace Subra.SSL_SMS.Web
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<GroupModel>();
+            builder.RegisterType<ContactModel>();
 
             base.Load(builder);
         }

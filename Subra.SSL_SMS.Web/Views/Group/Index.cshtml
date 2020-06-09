@@ -38,6 +38,8 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Created By</th>
+                                        <th>Created Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -95,13 +97,9 @@
                 "serverSide": true,
                 "ajax": "/Group/GetGroups",
                 "columnDefs": [
-                    { "width": "70%", "targets": 0 }
-                ],
-                "columnDefs": [
                     {
                         "orderable": false,
-                        "width": "30%",
-                        "targets": 1,
+                        "targets": 3,
                         "render": function (data, type, row) {
                             return `<button type="submit" class="btn btn-info btn-sm" onclick="window.location.href='/Group/Edit/${data}'" value='${data}'>
                                                 <i class="fa fa-pencil">

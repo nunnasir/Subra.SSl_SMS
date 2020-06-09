@@ -18,6 +18,9 @@ namespace Subra.SSL_SMS.Framework
             if (count > 0)
                 throw new DuplicatException("Group name already exist!", nameof(group.Name));
 
+            group.CreateUser = "Nasir Uddin";
+            group.CreateDate = DateTime.Now;
+
             _smsUnitOfWork.GroupRepository.Add(group);
             _smsUnitOfWork.Save();
         }
@@ -43,6 +46,8 @@ namespace Subra.SSL_SMS.Framework
 
             var existingGroup = _smsUnitOfWork.GroupRepository.GetById(group.Id);
             existingGroup.Name = group.Name;
+            existingGroup.UpdateUser = "Nasir Uddin";
+            existingGroup.UpdateDate = DateTime.Now;
 
             _smsUnitOfWork.Save();
         }
@@ -56,7 +61,7 @@ namespace Subra.SSL_SMS.Framework
         {
             if (searchText != "")
                 return _smsUnitOfWork.GroupRepository.GetDynamic(
-                    g => g.Name.Contains(searchText),
+                    g => g.Name.Contains(searchText) || g.CreateUser.Contains(searchText),
                     sortText, null, pageIndex, pageSize, false);
             else
                 return _smsUnitOfWork.GroupRepository.GetDynamic(null, sortText, null,

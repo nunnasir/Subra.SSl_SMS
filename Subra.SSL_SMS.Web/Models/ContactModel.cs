@@ -17,7 +17,7 @@ namespace Subra.SSL_SMS.Web.Models
                 tableModel.PageIndex,
                 tableModel.PageSize,
                 tableModel.SearchText,
-                tableModel.GetSortText(new string[] { "ContactId", "Name" }));
+                tableModel.GetSortText(new string[] { "ContatId", "Group", "CreateUser", "CreateDate" }));
 
             return new
             {
@@ -28,6 +28,8 @@ namespace Subra.SSL_SMS.Web.Models
                         {
                             record.ContatId,
                             record.Group.Name,
+                            record.CreateUser,
+                            record.CreateDate.ToString("dd/MM/yyyy"),
                             record.Id.ToString()
                         }).ToArray()
             };

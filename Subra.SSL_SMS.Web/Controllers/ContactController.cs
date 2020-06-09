@@ -47,12 +47,12 @@ namespace Subra.SSL_SMS.Web.Controllers
             return View(model);
         }
 
-        public IActionResult Edit(int id)
-        {
-            var model = new EditContactModel();
-            model.LoadContact(id);
-            return View(model);
-        }
+        //public IActionResult Edit(int id)
+        //{
+        //    var model = new EditContactModel();
+        //    model.LoadContact(id);
+        //    return View(model);
+        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -87,5 +87,25 @@ namespace Subra.SSL_SMS.Web.Controllers
             return Json(data);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteContact(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                var model = new ContactModel();
+                try
+                {
+                    var title = model.Delete(id);
+                    model.Response = new ResponseModel($"Contact '{title}' sussessfully deleted!", ResponseType.Success);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
+                    model.Response = new ResponseModel("Contact Deleting Failed!", ResponseType.Failure);
+                }
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

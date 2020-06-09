@@ -55,6 +55,17 @@ namespace Subra.SSL_SMS.Web.Models
                     {
                         new MenuItem
                         {
+                            Title = "Home",
+                            Icon = "fa-home",
+                            Childs = new List<MenuChildItem>
+                            {
+                                new MenuChildItem { Title = "Home", Url = "/Home" },
+                            }
+                        }
+                    },
+                    {
+                        new MenuItem
+                        {
                             Title = "Manage Group",
                             Icon = "fa-group",
                             Childs = new List<MenuChildItem>
@@ -62,7 +73,7 @@ namespace Subra.SSL_SMS.Web.Models
                                 new MenuChildItem { Title = "Group List", Url = "/Group" },
                                 new MenuChildItem { Title = "Add Group", Url = "/Group/Create" },
                                 new MenuChildItem { Title = "Contact List", Url = "/Contact" },
-                                new MenuChildItem { Title = "Add Group Contacts", Url = "/Contact/Create" },
+                                new MenuChildItem { Title = "Add Contacts", Url = "/Contact/Create" },
                             }
                         }
                     },

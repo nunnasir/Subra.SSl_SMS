@@ -3,6 +3,7 @@ using Subra.SSL_SMS.Framework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,10 +12,10 @@ namespace Subra.SSL_SMS.Web.Models
     public class CreateContactModel : ContactBaseModel
     {
         [Required]
-        [StringLength(30, MinimumLength = 3)]
-        public string ContatId { get; set; }
-        [Required]
         public int GroupId { get; set; }
+        [Required]
+        [ValidateContactIds]
+        public string ContatId { get; set; }
 
         public CreateContactModel(IContactService contactService) : base(contactService) { }
         public CreateContactModel() : base() { }

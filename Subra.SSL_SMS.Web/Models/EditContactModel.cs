@@ -12,7 +12,7 @@ namespace Subra.SSL_SMS.Web.Models
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(30, MinimumLength = 3)]
+        [ValidateContactIds]
         public string ContatId { get; set; }
         [Required]
         public int GroupId { get; set; }

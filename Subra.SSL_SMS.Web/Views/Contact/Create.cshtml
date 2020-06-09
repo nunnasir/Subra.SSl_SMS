@@ -1,7 +1,7 @@
-﻿@model CreateGroupModel
+﻿@model CreateContactModel
 
 @{
-    ViewData["Title"] = "Create Group";
+    ViewData["Title"] = "Create Contacts";
 }
 
 
@@ -16,7 +16,7 @@
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Group Info <small>New Group</small></h2>
+                <h2>Group Info <small>New Contact</small></h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -28,10 +28,20 @@
             <div class="x_content">
                 <form asp-action="Create" class="form-horizontal form-label-left">
                     <div class="item form-group">
-                        <label asp-for="Name" class="col-form-label col-md-3 col-sm-3 label-align">Group Name <span class="required">*</span></label>
+                        <label asp-for="GroupId" class="col-form-label col-md-3 col-sm-3 label-align">Group <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                            <input type="text" asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <select asp-for="GroupId" asp-items="@Model.GetGroupList()" class="form-control">
+                                <option value="">Please Select One</option>
+                            </select>
+                            <span asp-validation-for="GroupId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="item form-group">
+                        <label asp-for="ContatId" class="col-form-label col-md-3 col-sm-3 label-align">Contacts <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <textarea asp-for="ContatId" class="form-control" placeholder="Enter numbers with comma (,) separatot"></textarea>
+                            <span asp-validation-for="ContatId" class="text-danger"></span>
                         </div>
                     </div>
 

@@ -1,0 +1,91 @@
+﻿@model GroupSmsModel
+
+@{
+    ViewData["Title"] = "Send Bulk SMS";
+}
+
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Send Sms</h3>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>SMS Info <small>Group SMS</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="x_content">
+                <form asp-action="GroupSms" class="form-horizontal form-label-left">
+                    <div class="item form-group">
+                        <label asp-for="GroupId" class="col-form-label col-md-3 col-sm-3 label-align">Group <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <select asp-for="GroupId" asp-items="@Model.GetGroupList()" class="form-control" id="ddlGroup">
+                                <option value="">Please Select One</option>
+                            </select>
+                            <span asp-validation-for="GroupId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label asp-for="ContatId" class="col-form-label col-md-3 col-sm-3 label-align">Contacts <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <textarea asp-for="ContatId" id="ContactList" class="form-control" placeholder="Enter numbers with comma (,) separatot"></textarea>
+                            <span asp-validation-for="ContatId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label asp-for="Messages" class="col-form-label col-md-3 col-sm-3 label-align">Message <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <textarea asp-for="Messages" class="form-control" placeholder="Enter Message Text"></textarea>
+                            <span asp-validation-for="Messages" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+
+                    <div class="item form-group">
+                        <div class="col-md-6 col-sm-6 offset-md-3">
+                            <button type="submit" class="btn btn-success">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section PageScript
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            // Load Contact List
+            $('select#ddlGroup').change(function () {
+                var GroupId = $(this).val();
+
+                $.post("/SendSms/LoadContactList", {
+                    groupId: GroupId
+                },
+                    function (response) {
+                        $('#ContactList').val(response);
+                    }
+                );
+            });
+
+        });
+
+    </script>
+
+}

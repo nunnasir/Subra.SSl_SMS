@@ -9,13 +9,16 @@ namespace Subra.SSL_SMS.Framework
     {
         public IGroupRepository GroupRepository { get; set; }
         public IContactRepository ContactRepository { get; set; }
+        public ISmsLogRepository SmsLogRepository { get; set; }
         public SmsUnitOfWork(FrameworkContext dbContext,
             IGroupRepository groupRepository,
-            IContactRepository contactRepository)
+            IContactRepository contactRepository,
+            ISmsLogRepository smsLogRepository)
             : base(dbContext)
         {
             GroupRepository = groupRepository;
             ContactRepository = contactRepository;
+            SmsLogRepository = smsLogRepository;
         }
     }
 }

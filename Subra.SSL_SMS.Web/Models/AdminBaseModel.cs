@@ -84,8 +84,8 @@ namespace Subra.SSL_SMS.Web.Models
                             Icon = "fa-envelope",
                             Childs = new List<MenuChildItem>
                             {
-                                new MenuChildItem { Title = "Group SMS", Url = "/GroupSms" },
-                                new MenuChildItem { Title = "Bulk SMS", Url = "/BulkSms" },
+                                new MenuChildItem { Title = "Group SMS", Url = "/SendSms/GroupSms" },
+                                new MenuChildItem { Title = "Bulk SMS", Url = "/SendSms/BulkSms" },
                             }
                         }
                     },

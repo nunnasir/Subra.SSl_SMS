@@ -22,6 +22,7 @@ namespace Subra.SSL_SMS.Web
         {
             builder.RegisterType<GroupModel>();
             builder.RegisterType<ContactModel>();
+            builder.RegisterType<GroupSmsModel>();
 
             base.Load(builder);
         }

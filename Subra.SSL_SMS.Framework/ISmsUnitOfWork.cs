@@ -9,5 +9,6 @@ namespace Subra.SSL_SMS.Framework
     {
         IGroupRepository GroupRepository { get; set; }
         IContactRepository ContactRepository { get; set; }
+        ISmsLogRepository SmsLogRepository { get; set; }
     }
 }
